@@ -1,0 +1,41 @@
+package lzw;
+
+import java.io.File;
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class compression {
+	
+	ArrayList<String>aski = new ArrayList<String>();	
+	
+	private String data;
+	private Scanner x;
+	
+	public void ReadTheFile(String fileName)
+			{
+			  try{
+	              x =new Scanner(new File(fileName));
+	             }catch(Exception e)
+	             {
+	                   System.out.println("Couldn't find the file!");
+	             }
+			  
+		  	//reading from the file and save is string
+		  while(x.hasNext()){
+			  String ad =x.next();
+			  data+=ad;
+        				    }
+			}
+	public void saveAsci()
+		{
+			char c;
+			for(int i=0;i<=127;i++)
+				{
+					c=(char)i;
+					System.out.println(c+"\n");
+				
+				}
+		
+		}
+
+}

@@ -1,0 +1,41 @@
+package lzw;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class decompression {
+	
+	ArrayList<String>dictionary = new ArrayList<String>();
+	ArrayList<String>compresedData = new ArrayList<String>();
+	
+	private String compress;
+	private Scanner x;
+	
+	public void ReadTheFile()
+	   {
+		  try{//C:\\Users\\paula.pc\\Desktop\\lzw\\lzw\\
+	          x =new Scanner(new File("compresed data.txt"));
+	         }catch(Exception e)
+	         {
+	               System.out.println("Couldn't find the file!");
+	         }
+	  
+  			//reading from the file and save is string
+			  while(x.hasNext()){
+				  String ad =x.nextLine();
+				  compress+=ad;
+				             }
+			  compress=compress.substring(4,compress.length());
+				  x.close();
+				  
+				  String delims = "|";
+				  String[] tokens = (compress.split(delims));
+				  	for (int i=0;i<tokens.length;i++){
+				  			compresedData.add(tokens[i]+"\n");
+				  			System.out.println(tokens[i]);
+				  									 }
+				  
+	   }
+	
+}

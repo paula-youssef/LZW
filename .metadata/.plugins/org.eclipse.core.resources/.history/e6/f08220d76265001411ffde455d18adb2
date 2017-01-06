@@ -1,0 +1,16 @@
+package lzw;
+
+import javax.swing.JOptionPane;
+
+
+public class main {
+public static void main(String[] args) {
+	
+	String message =JOptionPane.showInputDialog(null,"input the file nsme:","the file directory and name: ",JOptionPane.PLAIN_MESSAGE);
+	compression o =new compression();
+	o.ReadTheFile(message);
+	o.makeMyDictionary();
+	o.compress();
+	o.writeOnFile();
+	 }
+}
